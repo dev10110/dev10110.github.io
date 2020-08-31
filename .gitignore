@@ -1,8 +1,8 @@
 
 # ignore everything in the distribution folder
 
-html/*
-html
+html/
+
 
 
 
