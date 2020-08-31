@@ -1,0 +1,47 @@
+# jemdoc: menu{MENU}{blog.html}, nofooter
+= Blog-ish
+
+Mini-articles with useful tibits of info.
+
+
+== Python Environment
+
+27 Aug 2020
+
+I prefer to use Conda for managing my virtual environments.
+
+~~~
+{Creating}{bash}
+conda create --name envName python=3.8
+conda activate envName
+...
+conda deactivate envName
+~~~
+
+
+~~~
+{Export environment}{bash}
+conda env export > environment.yml
+~~~
+
+~~~
+{Activate from env file}{bash}
+conda env create -f environment.yml
+~~~
+
+{{ <div class="divider"></div>}}
+
+== PDF shrinking
+
+29 Aug 2020
+
+~~~
+{}{img_left}{assets/projects/shrinkPDF-4.png}{}{}{}{}
+~~~
+While [https://smallpdf.com/ smallpdf.com] is awesome, we very quickly run out of free credits. 
+
+I wanted a tool built on my mac to do this, and I solved it. now I have a simple right click to shrink pdfs.
+
+[/shrinkPDF.html Read more]
+
+{{ <div class="divider"></div>}}
