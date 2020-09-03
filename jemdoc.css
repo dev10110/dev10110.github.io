@@ -1,18 +1,5 @@
 /* Default css file for jemdoc. */
 
-@media  only screen and (max-width: 1000px) {
-	body {
-		font-size: max(18px, 22pt);
-		text-align: justify;
-  text-justify: inter-word;
-	}
-}
-/* 
-@media  only screen and (max-width: 400px) {
-	body {
-		font-size: 22pt !important;
-	}
-} */
 
 #layout-menu {
 	margin-top: 2em;
