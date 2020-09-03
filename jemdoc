@@ -211,6 +211,7 @@ def standardconf():
   [menulastbit]
   </div>
   </div> <!-- closing main container -->
+  </div>
   
   [nomenulastbit]
   </div>
@@ -1091,10 +1092,10 @@ def dashlist(f, ordered=False):
 
   if ordered:
     char = '.'
-    ul = 'ol class="browser-default"'
+    ul = 'ol"'
   else:
     char = '-'
-    ul = 'ul class="browser-default"'
+    ul = 'ul"'
 
   while pc(f) == char:
     (s, newlevel) = np(f, True, False)
@@ -1104,7 +1105,7 @@ def dashlist(f, ordered=False):
       for i in range(newlevel - level):
         if newlevel > 1:
           out(f.outf, '\n')
-        out(f.outf, '<%s>\n<li>' % ul)
+        out(f.outf, '<%s class="browser-default>\n<li>' % ul)
     elif newlevel < level:
       out(f.outf, '\n</li>')
       for i in range(level - newlevel):
@@ -1464,7 +1465,6 @@ def procfile(f):
         nl(f)
         continue
       elif imgblock:
-        out(f.outf, '</td></tr></table>\n')
         imgblock = False
         nl(f)
         continue

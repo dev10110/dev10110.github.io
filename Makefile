@@ -10,6 +10,11 @@ build :
 	
 	cd src && python ../jemdoc -c mysite.conf -o ../html/ *.jemdoc
 
+	# run the search index
+	node build_index.js
+	mv lunr_index.js html/lunr_index.js
+	cp lunr_client.js html
+
 	echo "  *** DONE"
 
 # clean out the html folder for a new version (useful to clean old assets)
