@@ -1,5 +1,8 @@
 /* Default css file for jemdoc. */
 
+p {
+	text-align: justify;
+}
 
 #layout-menu {
 	margin-top: 2em;

@@ -3,6 +3,7 @@
 
 ~~~
 {}{raw}
+<div id="searchComponents">
 <script src="https://unpkg.com/lunr/lunr.js"></script>
 <script src="lunr_index.js"></script>
 <script src="lunr_client.js"></script>
@@ -13,6 +14,7 @@
 	
 	<div class="resultCount" id="resultCount"></div>
 	<div id="searchResults"></div>
+  <p> Use <code>cmd+F</code> to find the text after reaching a page. </p>
+  </div>
 ~~~
 
-Use +ctrl\+F+ to find the text after reaching a page.

@@ -71,6 +71,37 @@ pylinkvalidate.py --progress -o example.com
 
 Details about pylinkvalidator: https://github.com/bartdag/pylinkvalidator
 
+## Search
+
+Search is performed using ```lunr```, https://lunrjs.com
+
+The implementation is lifted from https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites
+
+Essentially, from the root folder
+```
+node install lunr
+node install cheerio
+```
+The list of files that make search possible are:
+```
+build_index.js    # builds the search index
+lunr_client.js    # for rendering the front end
+lunr_index.js     # the search index json file
+search.jemdoc     # compiled to html to render the search functionality
+```
+
+Check settings in ```build_index.js```. Currently it indexes all `html` files, and the body content is the set of content in the `div` with id `mainContentArea`
+
+Process:
+
+To make the search index, run (after the `html` files have been produced)
+```
+make search
+```
+from the root folder.
+
+
+
 Disclaimer
 ----------
 As per the original creators, 
