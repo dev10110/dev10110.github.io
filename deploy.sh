@@ -8,6 +8,7 @@ set -e
 # build
 make clean
 make
+make search
 
 # navigate into the build output directory
 cd html

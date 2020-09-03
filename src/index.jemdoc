@@ -1,8 +1,7 @@
 # jemdoc: menu{MENU}{index.html}
+= Devansh Agrawal
 
 {{<img src="assets/me.jpg" id="me", class="circle">}}
-
-= Devansh Agrawal
 
 I am a PhD student in Aerospace Engineering at the University of Michigan, studying with Professor Dimitra Panagou.
 
@@ -14,8 +13,12 @@ My research interests include Nonlinear Optimal Control, specifically for multi-
 - Aeronautical Engineering with a Year Abroad, Imperial College London, Massachusetts Institute of Technology, MEng
 
 == Contact
- - [mailto:devansh@umich.edu {{<i class="fa fa-envelope" aria-hidden="true"></i>}} Email]
- - [https://github.com/dev10110 {{<i class="fa fa-github" aria-hidden="true"></i>}} Github]
- - [https://www.linkedin.com/in/devansh-r-agrawal/ {{<i class="fa fa-linkedin" aria-hidden="true"></i>}} LinkedIn]
- - [https://orcid.org/0000-0002-0236-9077 {{<i class="ai ai-orcid ai"></i>}} ORCID]
- - [https://scholar.google.co.uk/citations?user=0R2CO0wAAAAJ&hl=en {{<i class="ai ai-google-scholar ai"></i>}} Google Scholar]
+[mailto:devansh@umich.edu {{<i class="fa fa-envelope" aria-hidden="true"></i>}} Email]
+
+[https://github.com/dev10110 {{<i class="fa fa-github" aria-hidden="true"></i>}} Github]
+
+[https://www.linkedin.com/in/devansh-r-agrawal/ {{<i class="fa fa-linkedin" aria-hidden="true"></i>}} LinkedIn]
+
+[https://orcid.org/0000-0002-0236-9077 {{<i class="ai ai-orcid ai"></i>}} ORCID]
+
+[https://scholar.google.co.uk/citations?user=0R2CO0wAAAAJ&hl=en {{<i class="ai ai-google-scholar ai"></i>}} Google Scholar]

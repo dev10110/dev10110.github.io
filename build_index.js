@@ -55,7 +55,7 @@ function readHtml(root, file, fileId) {
     if (typeof description == 'undefined') description = "";
     var keywords = $("meta[name=keywords]").attr("content");
     if (typeof keywords == 'undefined') keywords = "";
-    var body = $("body").text()
+    var body = $("#mainContentArea").text()
     if (typeof body == 'undefined') body = "";
     var data = {
         "id": fileId,

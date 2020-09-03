@@ -27,10 +27,12 @@ function parseLunrResults(results) {
         var title = item["t"];
         var preview = item["p"];
         var link = item["l"];
+        if (title==="") {title=link.replace(/\.[^/.]+$/, "");}
         var result = ('<p><span class="result-title"><a href="' + link + '">'
                     + title + '</a></span><br><span class="result-preview">'
                     + preview + '</span></p>');
         html.push(result);
+        console.log(result);
     }
     if (html.length) {
         return html.join("");

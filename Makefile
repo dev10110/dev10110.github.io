@@ -10,10 +10,7 @@ build :
 	
 	cd src && python ../jemdoc -c mysite.conf -o ../html/ *.jemdoc
 
-	# run the search index
-	node build_index.js
-	mv lunr_index.js html/lunr_index.js
-	cp lunr_client.js html
+	
 
 	echo "  *** DONE"
 
@@ -34,3 +31,12 @@ check:
 	# -O also checks external websites
 	# -i ignores some hosts, in this case the materialize cdn
 	pylinkvalidate.py --progress -O -i https://cdnjs.cloudflare.com/ http://localhost:8080
+
+
+# to make the search functionality
+.PHONY search:
+search:
+	# run the search index
+	node build_index.js
+	mv lunr_index.js html/lunr_index.js
+	cp lunr_client.js html

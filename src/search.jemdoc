@@ -14,3 +14,5 @@
 	<div class="resultCount" id="resultCount"></div>
 	<div id="searchResults"></div>
 ~~~
+
+Use +ctrl\+F+ to find the text after reaching a page.
