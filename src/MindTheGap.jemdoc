@@ -15,7 +15,7 @@ The app was designed to aid with social distancing. It can measure the distance 
 
 I specifically worked on designing the audio processing stack and designing the algorithm to allow for a scalable application. 
 
-I also wrote a paper detailing the technical aspects of the application. It will be hosted on Arxiv, but the [assets/papers/Mind_The_Gap.pdf paper] is here for now.
+I also wrote a paper detailing the technical aspects of the application, [https://arxiv.org/abs/2008.13564 available at Arxiv].
 
 Get the app at [https://mindthegap.today MindTheGap.today]
 

@@ -1,12 +1,19 @@
 # jemdoc: menu{MENU}{publications.html}
 = Publications
 
+*2020*
+
+~~~
+{}{table}{}
+ArXiv Preprint | Mind The Gap: Real-time Decentralized Distance Estimation using Ultrasound and Bluetooth across Multiple Smartphones [https://arxiv.org/abs/2008.13564  (Link)] | [assets/papers/MindTheGap.pdf pdf] [assets/papers/MindTheGap.bib bib]
+~~~
+
 
 *2019*
 
 ~~~
 {}{table}{}
-Journal of Physics D: Applied Physics |Higher thrust-to-power with large electrode gap spacing electroaerodynamic devices for aircraft propulsion [https://doi.org/10.1088/1361-6463/ab4a4c  (Link)] | [assets/papers/High-Gap-Spacing.pdf pdf] [assets/papers/High-Gap-Spacing.bib bib]  ||
+Journal of Physics D: Applied Physics | Higher thrust-to-power with large electrode gap spacing electroaerodynamic devices for aircraft propulsion [https://doi.org/10.1088/1361-6463/ab4a4c  (Link)] | [assets/papers/High-Gap-Spacing.pdf pdf] [assets/papers/High-Gap-Spacing.bib bib]  ||
 AIAA Aviation 2019 Forum | Wind Tunnel Testing of a Blown Flap Wing [https://doi.org/10.2514/6.2019-3170 (Link)] | [assets/papers/Blown-Lift.pdf pdf] [assets/papers/Blown-Lift.bib bib]  
 ~~~
 
