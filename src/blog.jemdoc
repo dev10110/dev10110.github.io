@@ -4,7 +4,7 @@
 Mini-articles with useful tibits of info.
 
 ~~~
-{}{card}{Semi-Automatic Bed Levelling of Ender 3}{Without a $40-ish upgrage, bed levelling on the Ender 3 takes forever. A simple gcode file fixes this.}{23 Sept 2020}{bedLevelling.html}{}
+{}{card}{Semi-Automatic Bed Levelling of Ender 3}{Without a $40-ish upgrade, bed levelling on the Ender 3 takes forever. A simple gcode file fixes this.}{23 Sept 2020}{bedLevelling.html}{assets/blog/bedLevelling.png}
 ~~~
 
 

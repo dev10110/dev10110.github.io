@@ -1,7 +1,12 @@
 # jemdoc: menu{MENU}{bedLevelling.html}
 = Semi-Automatic Bed Levelling of Ender 3
 
-Without a $40-ish upgrage, bed levelling on the Ender 3 takes forever. A simple gcode file fixes this. 
+~~~
+{}{raw}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tg0olMuIOHU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+~~~
+
+Without a $40-ish upgrade, bed levelling on the Ender 3 takes forever. A simple gcode file fixes this. 
 
 GCode, while sounding scary, is super easy. Each line is a direct command to the 3D printer.
 
