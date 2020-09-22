@@ -1,54 +1,24 @@
-# jemdoc: menu{MENU}{blog.html}, nofooter
+# jemdoc: menu{MENU}{blog.html}
 = Blog-ish
 
 Mini-articles with useful tibits of info.
 
-== Static Site Search
-
-4 Sept 2020
-
-I implemented a simple search on this static site using [https://lunrjs.com LunrJS]. The code was lifted from [https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites  https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites]  and was pretty easy to implement with JEMDOC!
-
-After compiling Jemdoc, I run +make search+ which creates an index of all my files using the +html+ folder, and then the actual search and display is handled by Lunr. It was surprisingly easy, fast and free!!
-
-== PDF shrinking
-
-29 Aug 2020
-
 ~~~
-{}{img_left}{assets/projects/shrinkPDF-4.png}{}{}{}{}
-~~~
-While [https://smallpdf.com/ smallpdf.com] is awesome, we very quickly run out of free credits. 
-
-I wanted a tool built on my mac to do this, and I solved it. now I have a simple right click to shrink pdfs.
-
-[/shrinkPDF.html Read more]
-
-{{ <div class="divider"></div>}}
-
-== Python Environment
-
-27 Aug 2020
-
-I prefer to use Conda for managing my virtual environments.
-
-~~~
-{Creating}{bash}
-conda create --name envName python=3.8
-conda activate envName
-...
-conda deactivate envName
+{}{card}{Semi-Automatic Bed Levelling of Ender 3}{Without a $40-ish upgrage, bed levelling on the Ender 3 takes forever. A simple gcode file fixes this.}{23 Sept 2020}{bedLevelling.html}{}
 ~~~
 
 
 ~~~
-{Export environment}{bash}
-conda env export > environment.yml
+{}{card}{Free and Easy Static Site Search for Jemdoc}{I implemented a simple search on this static site for my website}{4 Sept 2020}{staticSiteSearch.html}{assets/blog/search.gif}
 ~~~
 
+
 ~~~
-{Activate from env file}{bash}
-conda env create -f environment.yml
+{}{card}{PDF shrinking}{I wanted a tool built-in on my mac to shrink PDFs, and I solved it. Now I have a simple right click to shrink pdfs.}{29 Aug 2020}{shrinkPDF.html}{assets/projects/shrinkPDF-4.png}
 ~~~
 
-{{ <div class="divider"></div>}}
+
+
+~~~
+{}{card}{Python Environment}{Only what you need to create and use Conda Environments}{27 Aug 2020}{condaEnv.html}{assets/blog/conda.png}
+~~~

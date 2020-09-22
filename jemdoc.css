@@ -10,7 +10,7 @@ p {
 	line-height: 2em;
 }
 
-a{
+a {
 	word-break: keep-all;
 	-webkit-hyphens: auto;
 	hyphens: auto;
@@ -18,6 +18,11 @@ a{
 
 a:hover {
 	border-bottom: 1px gray dotted;
+}
+
+a.card-link {
+	color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }
 
 

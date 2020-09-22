@@ -246,12 +246,34 @@ def standardconf():
   
   [infoblockend]
   </div></div>
-  
+
+  [cardblock]
+  <div class="row">
+    <div class="col s12 m6">
+    <a href="|4" class="card-link">
+      <div class="card">
+        <div class="card-image">
+          <img src="|5">
+        </div>
+        <div class="card-content">
+          <p>|3</p>
+          <span class="card-title">|1</span>
+          <p>|2</p>
+        </div>
+        <div class="card-action">
+          <a href="|4">Read More</a>
+        </div>
+      </div>
+      </a>
+    </div>
+  </div>
+
   [footerstart]
   <div id="footer">
   <div id="footer-text">
   
   [footerend]
+  </div>
   </div>
   </div>
   
@@ -421,7 +443,7 @@ def mathjaxeqresub(r):
 
   return r
 
-def hb(f, tag, content1, content2=None, content3=None):
+def hb(f, tag, content1, content2=None, content3=None, content4=None, content5=None):
   """Writes out a halfblock (hb)."""
 
   if content1 is None:
@@ -429,16 +451,24 @@ def hb(f, tag, content1, content2=None, content3=None):
 
   if content3 is None:
     content3 = ""
+  if content4 is None: 
+    content4 = ""
+  if content5 is None: 
+    content5 = ""
 
   if content2 is None:
 #    out(f, re.sub(r'\|', content1, tag))
     r = re.sub(r'\|', content1, tag)
     r = re.sub(r'\|3', content3, r)
+    r = re.sub(r'\|4', content4, r)
+    r = re.sub(r'\|5', content5, r)
     r = mathjaxeqresub(r)
     out(f, r)
   else:
     r = re.sub(r'\|1', content1, tag)
     r = re.sub(r'\|3', content3, r)
+    r = re.sub(r'\|4', content4, r)
+    r = re.sub(r'\|5', content5, r)
     r = re.sub(r'\|2', content2, r)
     r = mathjaxeqresub(r)
     out(f, r)
@@ -942,6 +972,9 @@ def gethl(lang):
     d['strings'] = True
   elif lang == 'commented':
     d['commentuntilend'] = '#'
+  elif lang == 'gcode':
+    d['operator'] = ['G0', 'G1', 'M0', 'G21', 'G90', 'G28']
+    d['commentuntilend'] = ';'
 
   # Add bsbs (whatever those are).
   for x in ['statement', 'builtin', 'special', 'error']:
@@ -1406,6 +1439,8 @@ def procfile(f):
   infoblock = False
   imgblock = False
   tableblock = False
+  cardblock = False
+
   while 1: # wait for EOF.
     p = pc(f)
 
@@ -1473,6 +1508,10 @@ def procfile(f):
         tableblock = False
         nl(f)
         continue
+      elif cardblock:
+        cardblock = False
+        nl(f)
+        continue
       else:
         if pc(f) == '{':
           l = allreplace(nl(f))
@@ -1537,7 +1576,12 @@ def procfile(f):
             out(f.outf, '</a>')
           # out(f.outf, '&nbsp;</td>\n<td align="left">')
           imgblock = True
-
+        elif g[1] == 'card':
+          # handles
+          # {}{card}{title}{description}{date}{link}{image-src}
+          hb(f.outf, f.conf['cardblock'], g[2], g[3], g[4], g[5], g[6])
+          cardblock=True
+          
         else:
           raise JandalError("couldn't handle block", f.linenum)
 
