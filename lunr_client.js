@@ -80,7 +80,7 @@ function searchLunr(query) {
   var idx = lunr.Index.load(LUNR_DATA);
 
   // Write results to page
-  var results = idx.search(query);
+  var results = idx.search(query+"~2");
   var resultHtml = parseLunrResults(results);
   var elementId = LUNR_CONFIG["resultsElementId"];
   document.getElementById(elementId).innerHTML = resultHtml;
