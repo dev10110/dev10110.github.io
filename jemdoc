@@ -249,23 +249,23 @@ def standardconf():
 
   [cardblock]
   <div class="row">
-    <div class="col s12 m6">
-    <a href="|4" class="card-link">
-      <div class="card">
-        <div class="card-image">
-          <img src="|5">
-        </div>
-        <div class="card-content">
-          <p>|3</p>
-          <span class="card-title">|1</span>
-          <p>|2</p>
-        </div>
-        <div class="card-action">
-          <a href="|4">Read More</a>
-        </div>
-      </div>
-      </a>
-    </div>
+  <div class="col s12 m6">
+  <a href="|4" class="card-link">
+  <div class="card">
+  <div class="card-image">
+  <img src="|5">
+  </div>
+  <div class="card-content">
+  <p>|3</p>
+  <span class="card-title">|1</span>
+  <p>|2</p>
+  </div>
+  <div class="card-action">
+  <a href="|4">Read More</a>
+  </div>
+  </div>
+  </a>
+  </div>
   </div>
 
   [footerstart]
