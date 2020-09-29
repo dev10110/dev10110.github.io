@@ -23,3 +23,12 @@ conda env export > environment.yml
 {Activate from env file}{bash}
 conda env create -f environment.yml
 ~~~
+
+~~~
+{Adding jupyter to the environment}{bash}
+conda activate envName
+pip install --user ipykernel
+python -m ipykernel install --user --name=envName
+conda install jupyter
+jupyter notebook
+~~~
