@@ -1,7 +1,15 @@
 # jemdoc: menu{MENU}{blog.html}
 = Blog-ish
 
+~~~
+{}{raw}
+<div class="row">
+~~~
+
 Mini-articles with useful tibits of info.
+~~~
+{}{card}{Raspi Setup on a Mac}{A simple way to set up a Raspiberry Pi Zero W in headless mode from a Mac. }{21 Oct 2020}{raspberrypi-setup.html}{}
+~~~
 
 ~~~
 {}{card}{Semi-Automatic Bed Levelling of Ender 3}{Without a $40-ish upgrade, bed levelling on the Ender 3 takes forever. A simple gcode file fixes this.}{23 Sept 2020}{bedLevelling.html}{assets/blog/bedLevelling.png}
@@ -21,4 +29,9 @@ Mini-articles with useful tibits of info.
 
 ~~~
 {}{card}{Python Environment}{Only what you need to create and use Conda Environments}{27 Aug 2020}{condaEnv.html}{assets/blog/conda.png}
+~~~
+
+~~~
+{}{raw}
+</div>
 ~~~

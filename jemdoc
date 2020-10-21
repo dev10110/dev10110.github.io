@@ -248,10 +248,10 @@ def standardconf():
   </div></div>
 
   [cardblock]
-  <div class="row">
+  <!--<div class="row"> -->
   <div class="col s12 m6">
   <a href="|4" class="card-link">
-  <div class="card">
+  <div class="card large">
   <div class="card-image">
   <img src="|5">
   </div>
@@ -266,7 +266,7 @@ def standardconf():
   </div>
   </a>
   </div>
-  </div>
+  <!--</div>-->
 
   [footerstart]
   <div id="footer">
