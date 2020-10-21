@@ -2,7 +2,7 @@
 = rocketPy
 
 ~~~
-{}{img_left}{rocketPy-cover.png}{}{}{}{}
+{}{img_left}{assets/projects/rocketPy-cover.png}{}{}{}{}
 ~~~
 
 While openRocket is a standard hobbyist rocket design and analysis tool, its built in Java and has limitations when it comes to easily extending the software.
