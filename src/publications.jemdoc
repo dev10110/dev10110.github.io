@@ -1,26 +1,58 @@
 # jemdoc: menu{MENU}{publications.html}
 = Publications
 
-*2020*
+[https://scholar.google.com.sg/citations?user=0R2CO0wAAAAJ&hl=en Google Scholar Page]
 
-~~~
-{}{table}{}
-ArXiv Preprint | Mind The Gap: Real-time Decentralized Distance Estimation using Ultrasound and Bluetooth across Multiple Smartphones [https://arxiv.org/abs/2008.13564  (Link)] | [assets/papers/MindTheGap.pdf pdf] [assets/papers/MindTheGap.bib bib]
-~~~
+2023
 
+- L-CSS and CDC 2023\n
+*Sensor-based Planning and Control for Robotic Systems: Introducing Clarity and Perceivability*\n
+Devansh Agrawal and Dimitra Panagou\n
+[assets/papers/Perceivability.pdf (pdf)]
 
-*2019*
+2022
 
-~~~
-{}{table}{}
-Journal of Physics D: Applied Physics | Higher thrust-to-power with large electrode gap spacing electroaerodynamic devices for aircraft propulsion [https://doi.org/10.1088/1361-6463/ab4a4c  (Link)] | [assets/papers/High-Gap-Spacing.pdf pdf] [assets/papers/High-Gap-Spacing.bib bib]  ||
-AIAA Aviation 2019 Forum | Wind Tunnel Testing of a Blown Flap Wing [https://doi.org/10.2514/6.2019-3170 (Link)] | [assets/papers/Blown-Lift.pdf pdf] [assets/papers/Blown-Lift.bib bib]  
-~~~
+- L-CSS and CDC 2022\n
+*Safe and robust observer-controller synthesis using control barrier functions*\n
+Devansh Agrawal and Dimitra Panagou\n
+[https://ieeexplore.ieee.org/abstract/document/9803210 (link)] [assets/papers/ObserverControllers.pdf (pdf)] [assets/papers/ObserverControllers.bib (bib)]
 
-*2017*
+- L-CSS and ACC 2022\n
+*A Constructive Method for Designing Safe Multirate Controllers for Differentially-Flat Systems* \n
+Devansh Agrawal, Hardik Parwana, Ryan K Cosner, Ugo Rosolia, Aaron D Ames, Dimitra Panagou\n
+[https://ieeexplore.ieee.org/abstract/document/9655322 (link)] [assets/papers/SafeDiffFlat.pdf (pdf)] [assets/papers/SafeDiffFlat.bib (bib)]
 
-~~~
-{}{table}{}
-Nature Biomed. Eng. | Conformal phased surfaces for wireless powering of bioelectronic microdevices [https://doi.org/10.1038/s41551-017-0043 (Link)]| [assets/papers/Biomedical-Wireless-Powering.pdf pdf] [assets/papers/Biomedical-Wireless-Powering.bib bib] ||
-PLOS ONE | Subcellular electrical stimulation of neurons enhances the myelination of axons by oligodendrocytes [https://doi.org/10.1371/journal.pone.0179642 (Link)] | [assets/papers/Subcellular-Stimulation.pdf pdf] [assets/papers/Subcellular-Stimulation.bib bib]
-~~~
+2021
+- CDC 2021\n
+ *Safe Control Synthesis via Input Constrained Control Barrier Functions*
+  \n Devansh Agrawal and Dimitra Panagou \n [https://ieeexplore.ieee.org/document/9682938 (link)]  [assets/papers/InputConstrainedCBF.pdf (pdf)] [assets/papers/InputConstrainedCBF.bib (bib)]
+
+2020
+
+- ArXiv\n
+*Mind The Gap: Real-time Decentralized Distance Estimation using Ultrasound and Bluetooth across Multiple Smartphones* \n
+Devansh Agrawal, Peter Lyon, Martin Frobisher, Andy Doherty, Ben Allen, Freddie Rawlins \n
+ [https://arxiv.org/abs/2008.13564  (link)] [assets/papers/MindTheGap.pdf (pdf)] [assets/papers/MindTheGap.bib (bib)]
+
+2019
+
+- Journal of Physics D: Applied Physics \n  
+*Higher thrust-to-power with large electrode gap spacing electroaerodynamic devices for aircraft propulsion* \n 
+Haofeng Xu, Nicolas Gomez-Vega, Devansh Agrawal and Steven R H Barrett\n
+[https://doi.org/10.1088/1361-6463/ab4a4c  (link)] [assets/papers/High-Gap-Spacing.pdf (pdf)] [assets/papers/High-Gap-Spacing.bib (bib)]
+- AIAA Aviation 2019 Forum \n
+ *Wind Tunnel Testing of a Blown Flap Wing* \n
+ Devansh Agrawal, Faisal Asad, Blake M. Berk, Trevor Long, Jackson Lubin, Christopher Courtin, Mark Drela, R John Hansman and Jacqueline L. Thomas\n
+ [https://doi.org/10.2514/6.2019-3170 (link)]  [assets/papers/Blown-Lift.pdf (pdf)]  [assets/papers/Blown-Lift.bib (bib)]  
+
+2017
+
+- Nature Biomed. Eng.\n
+ *Conformal phased surfaces for wireless powering of bioelectronic microdevices* \n
+ Devansh Agrawal, Yuji Tanabe, Desen Weng, Andrew Ma, Stephanie Hsu, Song-Yan Liao, Zhe Zhen, Zi-Yi Zhu, Chuanbowen Sun, Zhenya Dong, Fengyuan Yang, Hung Fat Tse, Ada S. Y. Poon & John S. Ho\n
+ [https://doi.org/10.1038/s41551-017-0043 (link)] [assets/papers/Biomedical-Wireless-Powering.pdf (pdf)] [assets/papers/Biomedical-Wireless-Powering.bib (bib)]
+- PLOS ONE \n
+ *Subcellular electrical stimulation of neurons enhances the myelination of axons by oligodendrocytes*\n
+ Hae Ung Lee, Agata Blasiak, Devansh R. Agrawal, Daniel Teh Boon Loong, Nitish V. Thakor, Angelo H. All, John S. Ho, In Hong Yang \n
+ [https://doi.org/10.1371/journal.pone.0179642 (link)] [assets/papers/Subcellular-Stimulation.pdf (pdf)] [assets/papers/Subcellular-Stimulation.bib (bib)]
+
