@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python Environments</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">Devansh Agrawal</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="education.html">Education</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="experience.html">Experience</a></div>
+<div class="menu-item"><a href="projects.html">Projects</a></div>
+<div class="menu-category">Reference</div>
+<div class="menu-item"><a href="https://dev10110.github.io/tech-notes/">Tech&nbsp;Notes</a></div>
+<div class="menu-item"><a href="blog.html">Blog-ish</a></div>
+<div class="menu-item"><a href="jemdocMathJaxMaterialize.html">jemdoc&nbsp;MathJax&nbsp;Materialize</a></div>
+<div class="menu-category">Search</div>
+<div class="menu-item"><a href="search.html">Search</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9" id="mainContentArea">
+<div id="toptitle">
+<h1>Python Environments</h1>
+</div>
+<p>27 Aug 2020
+</p>
+<p>I prefer to use Conda for managing my virtual environments.
+</p>
+<div class="codeblock">
+<div class="blocktitle">Creating</div>
+<div class="blockcontent"><pre>
+conda create --name envName python=3.8
+conda activate envName
+...
+conda deactivate envName
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Export environment</div>
+<div class="blockcontent"><pre>
+conda env export &gt; environment.yml
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Activate from env file</div>
+<div class="blockcontent"><pre>
+conda env create -f environment.yml
+</pre></div></div>
+<div class="codeblock">
+<div class="blocktitle">Adding jupyter to the environment</div>
+<div class="blockcontent"><pre>
+conda activate envName
+pip install --user ipykernel
+python -m ipykernel install --user --name=envName
+conda install jupyter
+jupyter notebook
+</pre></div></div>
+<div id="footer">
+<div id="footer-text">
+Page generated 2023-06-18 18:19:54 EDT, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+</div>
+</div>
+</div>
+</div>
+</div> <!-- closing main container -->
+</div>
+<script>
+</script>
+</body>
+  </html>

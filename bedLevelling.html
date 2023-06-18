@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semi-Automatic Bed Levelling of Ender 3</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">Devansh Agrawal</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="education.html">Education</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="experience.html">Experience</a></div>
+<div class="menu-item"><a href="projects.html">Projects</a></div>
+<div class="menu-category">Reference</div>
+<div class="menu-item"><a href="https://dev10110.github.io/tech-notes/">Tech&nbsp;Notes</a></div>
+<div class="menu-item"><a href="blog.html">Blog-ish</a></div>
+<div class="menu-item"><a href="jemdocMathJaxMaterialize.html">jemdoc&nbsp;MathJax&nbsp;Materialize</a></div>
+<div class="menu-category">Search</div>
+<div class="menu-item"><a href="search.html">Search</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9" id="mainContentArea">
+<div id="toptitle">
+<h1>Semi-Automatic Bed Levelling of Ender 3</h1>
+</div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tg0olMuIOHU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Without a $40-ish upgrade, bed levelling on the Ender 3 takes forever. A simple gcode file fixes this. 
+</p>
+<p>GCode, while sounding scary, is super easy. Each line is a direct command to the 3D printer.
+</p>
+<p>Here are the relevant commands that I used:
+</p>
+<ul class="browser-default">
+<li><p><tt>G28</tt> : Auto-home all axes
+</p>
+</li>
+</ul>
+<p>You cal also use <tt>G28 X</tt> or <tt>G28 Y</tt> to only home the x or y axes respectively. 
+</p>
+<ul class="browser-default">
+<li><p><tt>G21</tt> : Set units to mm
+</p>
+</li>
+<li><p><tt>G90</tt> : Use absolute positioning. <tt>G91</tt> for relative positioning.
+</p>
+</li>
+<li><p><tt>G0</tt> : Jog to a XYZ location. 
+</p>
+</li>
+</ul>
+<p><i>Example</i>: <tt>G0 X30</tt> moves the head to the <tt>x=30mm</tt> location, and doesnt modify the other axes.
+</p>
+<ul class="browser-default">
+<li><p><tt>G1</tt> : Move to a XYZ location, at a given feedrate 
+</p>
+</li>
+</ul>
+<p><i>Example</i>: <tt>G0 X30 Y10 F1500</tt> moves the head to the <tt>x=30mm, y=10mm</tt> location at a speed of <tt>1500mm/s</tt>, and doesn't modify the other axes.
+</p>
+<ul class="browser-default">
+<li><p><tt>M0</tt> : Wait for user to click the button.
+</p>
+</li>
+</ul>
+<p>So when you run the script below, it will home the axes, and then automatically move to a corner, wait for you to adjust the bed and click the button, and then move to the next one.
+</p>
+<p>This is <b>so</b> much easier than fiddling with the <tt>Move Axis</tt> methods in the firmware. 
+</p>
+<p>If anyone knows how I can add this script into the firmware, I would love to know, but for now I just saved this to a file called <tt>bedLevelling.gcode</tt> and then run the file as if I'm printing a normal file.
+</p>
+<div class="infoblock">
+<div class="blockcontent">
+<p>Note, I've assumed the location of the screws - it is correct for the Ender 3, but you might need to change if for your printer.
+</p>
+</div></div>
+<p>Hope it helps someone. 
+</p>
+<div class="codeblock">
+<div class="blocktitle">bedLevelling.gcode</div>
+<div class="blockcontent"><pre>
+
+<span class="comment">; This script is to help with levelling the bed.</span>
+
+<span class="operator">G21</span> ; Set units to mm
+<span class="operator">G28</span> ; Home all axis
+<span class="operator">G90</span> ; Absolute positioning
+
+<span class="operator">G1</span> Z2 F1500.0 ; Rise up
+
+<span class="comment">; First Point</span>
+<span class="operator">G1</span> X30 Y35 F3000 ; move
+
+<span class="operator">G1</span> Z0 F1500 ; Go down
+
+<span class="operator">M0</span> ; Wait for input
+
+<span class="operator">G1</span> Z2 F1500 ; Go back up
+
+
+<span class="comment">; Second Point</span>
+<span class="operator">G1</span> X200 Y205 F3000 ; Move
+
+<span class="operator">G1</span> Z0 F1500 ; Go down
+
+<span class="operator">M0</span> ; wait for input
+
+<span class="operator">G1</span> Z2 F1500 ; Go back up
+
+
+
+<span class="comment">; Third POINT</span>
+<span class="operator">G1</span> X200 Y35 F3000 ; Move
+
+<span class="operator">G1</span> Z0 F1500 ; Go down
+
+<span class="operator">M0</span>; wait for input
+
+<span class="operator">G1</span> Z2 F1500 ;　Go back up
+
+
+
+
+<span class="comment">; Fourth POINT</span>
+<span class="operator">G1</span> X30 Y205 F3000 ; Move
+
+<span class="operator">G1</span> Z0 F1500 ; Go down
+
+<span class="operator">M0</span> ; wait for input
+
+<span class="operator">G1</span> Z2 F1500 ;　Go back up
+
+
+
+<span class="comment">; Center point</span>
+<span class="operator">G1</span> X110 Y120 F3000 ; Move
+
+<span class="operator">G1</span> Z0 F1500 ; Go down
+
+<span class="operator">M0</span>; wait for input
+
+<span class="operator">G1</span> Z2 F1500 ;　Go back up
+
+<span class="comment">; Get close to the starting point</span>
+
+<span class="operator">G1</span> X5 Y5 ;
+
+</pre></div></div>
+<p>The <tt>;</tt> just means that the rest of the line is a comment. It is not needed at the end of every line.
+</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2023-06-18 18:19:54 EDT, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+</div>
+</div>
+</div>
+</div>
+</div> <!-- closing main container -->
+</div>
+<script>
+</script>
+</body>
+  </html>

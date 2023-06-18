@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>rocketPy</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">Devansh Agrawal</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="education.html">Education</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="experience.html">Experience</a></div>
+<div class="menu-item"><a href="projects.html">Projects</a></div>
+<div class="menu-category">Reference</div>
+<div class="menu-item"><a href="https://dev10110.github.io/tech-notes/">Tech&nbsp;Notes</a></div>
+<div class="menu-item"><a href="blog.html">Blog-ish</a></div>
+<div class="menu-item"><a href="jemdocMathJaxMaterialize.html">jemdoc&nbsp;MathJax&nbsp;Materialize</a></div>
+<div class="menu-category">Search</div>
+<div class="menu-item"><a href="search.html">Search</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9" id="mainContentArea">
+<div id="toptitle">
+<h1>rocketPy</h1>
+</div>
+<img src="assets/projects/rocketPy-cover.png" /><p>While openRocket is a standard hobbyist rocket design and analysis tool, its built in Java and has limitations when it comes to easily extending the software.
+</p>
+<p>There are other softwares out there (some not free) but I couldn’t find a good pythonic implementation that met my specific need - to be able to test the robustness of a custom throttle controller designed by the ICLR team.
+</p>
+<p>As such, I turned to CambridgeRocket, which has been implemented in MATLAB. Unfortunately, (not only due to MATLAB’s limitations) it is very poorly written, passing random structs with names as generic as INTAB1 INTAB2, INTAB3 etc around.
+</p>
+<p>It also didn’t expose a method to implement and test a live controller.
+</p>
+<p>However, the technical documentation and two papers published on the project are quite well written and make sense. As such, I have decided to implement them myself in python, and test my team’s code on a simulator I built and therefore know the inner workings of.
+</p>
+<p>A key aspect to rocketPy will be its ability to solve the stochastic differential equations, which scipy does not have good implementations of. I havent yet decided if I want to learn and implement this myself, use RK4 and allow for random noise within scipy’s API, or to use a relatively ugly hack to get around this. I’ll play around with these ideas once I’m at that stage :)
+</p>
+<p>The current working GitHub repository is <a href="https://github.com/dev10110/rocketPy" target=&ldquo;blank&rdquo;>here</a>, and I’m hoping to make it into a full open-source package at some point that others can modify.</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2023-06-18 18:19:55 EDT, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+</div>
+</div>
+</div>
+</div>
+</div> <!-- closing main container -->
+</div>
+<script>
+</script>
+</body>
+  </html>

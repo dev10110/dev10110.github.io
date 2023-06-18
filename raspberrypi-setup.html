@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raspberry Pi Set up Headless Mode on a Mac</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">Devansh Agrawal</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="education.html">Education</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="experience.html">Experience</a></div>
+<div class="menu-item"><a href="projects.html">Projects</a></div>
+<div class="menu-category">Reference</div>
+<div class="menu-item"><a href="https://dev10110.github.io/tech-notes/">Tech&nbsp;Notes</a></div>
+<div class="menu-item"><a href="blog.html">Blog-ish</a></div>
+<div class="menu-item"><a href="jemdocMathJaxMaterialize.html">jemdoc&nbsp;MathJax&nbsp;Materialize</a></div>
+<div class="menu-category">Search</div>
+<div class="menu-item"><a href="search.html">Search</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9" id="mainContentArea">
+<div id="toptitle">
+<h1>Raspberry Pi Set up Headless Mode on a Mac</h1>
+</div>
+<p>22 Oct 2020
+</p>
+<p>Efficiently setting up a Raspberry Pi is always a bit tricky. But it doesnt have to be.
+</p>
+<p>Today, I set it up rather easily, adapting from <a href="https://desertbot.io/blog/setup-pi-zero-w-headless-wifi" target=&ldquo;blank&rdquo;>Desertbot.io</a>
+</p>
+<p>Here are the steps I followed:
+</p>
+<h2>Step 1</h2>
+<p>Get <a href="https://www.raspberrypi.org/downloads/" target=&ldquo;blank&rdquo;>Raspberry Pi Imager</a>
+</p>
+<h2>Step 2</h2>
+<p>Plug in the SD card, and using the Raspberry Pi imager, flash an operating system of your choice. I just used the recommended Raspberry OS.
+</p>
+<h2>Step 3</h2>
+<p>Wifi settings are always tricky, so I initially set up my zero using SSH over USB, following the instructions <a href="https://desertbot.io/blog/ssh-into-pi-zero-over-usb" target=&ldquo;blank&rdquo;>here</a>, and repeated concisely below.
+</p>
+<p>Check the volumes:
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+ls -ls /Volumes/
+</pre></div></div>
+<p>which should show a <tt>boot</tt> directory.
+</p>
+<h2>Step 4</h2>
+<p>Enable ssh:
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+touch /Volumes/boot/ssh
+</pre></div></div>
+<h2>Step 5 </h2>
+<p>Edit <tt>/Volumes/boot/config.txt</tt> and append to the bottom:
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+dtoverlay=dwc2
+</pre></div></div>
+<h2>Step 6</h2>
+<p>Edit <tt>/Volumes/boot/cmdline.txt</tt>. After rootwait, append this text leaving only one space between rootwait and the new text (otherwise it might not be parsed correctly):
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+modules-load=dwc2,g_ether
+</pre></div></div>
+<p>If there was any text after the new text make sure that there is only one space between that text and the new text
+</p>
+<h2>Step 7</h2>
+<p>Put the SD card into the Zero
+</p>
+<p>Plug the zero to the computer using ONLY the usb cable (no power cable)
+</p>
+<p>Monitor System Preferences <i> Network panel </i> RNDIS/Ethernet Gadget status to check if the IP address is assigned to the zero. 
+</p>
+<h2>Step 8</h2>
+<p>Once booted, log in 
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+ssh pi@raspberrypi.local
+</pre></div></div>
+<p>password: <tt>raspberry</tt>
+</p>
+<h2>Step 9</h2>
+<p>Set up the wifi connection (from inside the raspi ssh)
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+sudo raspi-config
+</pre></div></div>
+<h2>Done</h2>
+<p>This should be enough to having it set up correctly. No <tt>wpa_supplicant</tt> needed!
+</p>
+<p>To power off the raspi safely, simply run
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+sudo poweroff
+</pre></div></div>
+<div id="footer">
+<div id="footer-text">
+Page generated 2023-06-18 18:19:55 EDT, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+</div>
+</div>
+</div>
+</div>
+</div> <!-- closing main container -->
+</div>
+<script>
+</script>
+</body>
+  </html>

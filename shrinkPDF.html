@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shirnk PDF using right-click on Mac</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">Devansh Agrawal</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="education.html">Education</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="experience.html">Experience</a></div>
+<div class="menu-item"><a href="projects.html">Projects</a></div>
+<div class="menu-category">Reference</div>
+<div class="menu-item"><a href="https://dev10110.github.io/tech-notes/">Tech&nbsp;Notes</a></div>
+<div class="menu-item"><a href="blog.html">Blog-ish</a></div>
+<div class="menu-item"><a href="jemdocMathJaxMaterialize.html">jemdoc&nbsp;MathJax&nbsp;Materialize</a></div>
+<div class="menu-category">Search</div>
+<div class="menu-item"><a href="search.html">Search</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9" id="mainContentArea">
+<div id="toptitle">
+<h1>Shirnk PDF using right-click on Mac</h1>
+</div>
+<p>I wanted a simple alternative to SmallPDF that lived on my mac. I now have a small right-click utility to shrink files.
+</p>
+<p>A set of pdfs went from 22.9 MB to 9 MB.
+</p>
+<p>I decided to use ghostscript, which is a free and easy to use tool to shrink pdf files.
+</p>
+<h3>Step 1. Install ghostscript</h3>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+brew install ghostscript
+</pre></div></div>
+<p>This will install ghostscript to usr/local/bin/ghostscript.
+</p>
+<h3>Step 2. Launch Automator, and make an Quick Action</h3>
+<img src="assets/projects/shrinkPDF-1.png" /><h3>Step 3. Set Workflow receives current <b>PDF files</b> in <b>Finder</b></h3>
+<h3>Step 4.  Add the Run Shell Script block and set Pass input to <b>as Argument</b></h3>
+<p>At this point, automator should look like this:
+</p>
+<img src="assets/projects/shrinkPDF-2.png" /><h3>Step 5. Add the shell script:</h3>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+for f in "$@"
+do
+	cd $(dirname "$f")
+	fileNameExt=$(basename "$f")
+	fileName=${fileNameExt%.*}
+	fileName+="-small.pdf"
+	/usr/local/bin/gs -sDEVICE=pdfwrite -dNOPAUSE -dQUIET -dBATCH -dPDFSETTINGS=/ebook -dPrinted=false -sOutputFile=$fileName "$f"
+done
+</pre></div></div>
+<p>A decent discussion of the ghostscript settings is <a href="https://gist.github.com/firstdoit/6390547" target=&ldquo;blank&rdquo;>here</a>. I switched from using screen to ebook as the image compression was too agressive.
+</p>
+<p>This will, for each file, figure out the new name (which has &rsquo;-small&rsquo; appended to the filename) and run the Ghostscript command to shrink the file.
+Since we have changed directory to the current filepath, the shrunk file will appear in the same directory as the original file.
+</p>
+<h3>Step 6: Save</h3>
+<p>Save the file and &ldquo;Shrink PDF&rdquo;, and now when you right-click on a pdf file in Finder, an option to Shrink the PDF will appear. 
+</p>
+<img src="assets/projects/shrinkPDF-3.png" /><h3>Final File</h3>
+<p>I havent tested if this works, but the automator file can be downloaded <a href="assets/projects/shrinkPDF.zip" target=&ldquo;blank&rdquo;>here</a>
+</p>
+<h2>RUNNING</h2>
+<p>Now when you select a pdf file, you can shrink it!
+</p>
+<img src="assets/projects/shrinkPDF-4.png" /><p>I hope this can help someone!
+</p>
+</div>
+</div> <!-- closing main container -->
+</div>
+<script>
+</script>
+</body>
+  </html>

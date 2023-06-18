@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jemdoc MathJax Materialize</title>
+<!-- MathJax -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async>
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+	  TeX: { equationNumbers: { autoNumber: "AMS" } }
+});
+</script>
+<!-- End MathJax -->
+<!-- Materialize Css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+<!-- Jemdoc CSS -->
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+</head>
+<body>
+<div class="container"> <!-- Starting main container -->
+<div class="row section">
+<div class="col s12 l3" id="layout-menu"><div class="divider" style="margin-bottom:1rem; margin-top:2rem"></div><section>
+<div class="menu-category">Devansh Agrawal</div>
+<div class="menu-item"><a href="index.html">Home</a></div>
+<div class="menu-item"><a href="education.html">Education</a></div>
+<div class="menu-item"><a href="publications.html">Publications</a></div>
+<div class="menu-item"><a href="experience.html">Experience</a></div>
+<div class="menu-item"><a href="projects.html">Projects</a></div>
+<div class="menu-category">Reference</div>
+<div class="menu-item"><a href="https://dev10110.github.io/tech-notes/">Tech&nbsp;Notes</a></div>
+<div class="menu-item"><a href="blog.html">Blog-ish</a></div>
+<div class="menu-item"><a href="jemdocMathJaxMaterialize.html" class="current">jemdoc&nbsp;MathJax&nbsp;Materialize</a></div>
+<div class="menu-category">Search</div>
+<div class="menu-item"><a href="search.html">Search</a></div>
+</section><div class="divider" style="margin-bottom:2rem; margin-top:1rem"></div>
+</div>
+<div class="col s12 l9" id="mainContentArea">
+<div id="toptitle">
+<h1>Jemdoc MathJax Materialize</h1>
+</div>
+<p>This website was created using a modified version of jemdoc+mathJax
+</p>
+<p>In particular, the styling has been modified to use MaterializeCSS instead of tables and raw CSS. This allows us to easily extend and use more features from Materialize. 
+</p>
+<p>Overall, I feel its just a neater version of Jemdoc (although kudos to Jacob Mattingley for good design taste) and uses newer standards of webdesign. 
+</p>
+<p>The main difference is that I have remove the big table wrapping the sidebar and the content, and instead defined the layout as two side-by-side columns.
+The columns are responsive, and thus look reasonable on small screens. Todo: collapse side bar to hamburger menu on small screens. 
+</p>
+<p><a href="https://github.com/dev10110/dev10110.github.io" target=&ldquo;blank&rdquo;>Jemdoc + MathJax + Materialize Github Repo</a>
+</p>
+<p><b>Feel free to fork or clone this repository to make it your own!</b>
+</p>
+<h2>Whats New?</h2>
+<ul class="browser-default">
+<li><p>Removed table structure, introduced Materialize columns (allows for responsive website with clean theme)
+</p>
+</li>
+<li><p>Easier MakeFile and deploy to Github Pages
+</p>
+</li>
+</ul>
+<p>Neither of these changes should break anything in your jemdoc + mathjax websites.
+It simply allows for easier extension.
+</p>
+<h3>Dependencies</h3>
+<p>Jemdoc + MathJax requires Python 2 or 3. I have only tested Python 3.8
+</p>
+<p>To check links, you will need <a href="https://github.com/bartdag/pylinkvalidator" target=&ldquo;blank&rdquo;><tt>pylinkvalidator</tt></a>
+in your local environment.
+</p>
+<p>MaterializeCSS is used, but is grabbed using the CDN so no efforts from your end are required.
+</p>
+<h2>Folder Structure</h2>
+<p>A very simple folder structure is used.
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+root/
+  | - src/
+      | - contains all the *.jemdoc files, MENU file and mysite.conf
+      | - assets/
+            | - contains all the assets (pictures, pdfs, codefiles etc) that you want copied over to the distrubution. The internal folder structure is preserved.
+  | - jemdoc
+  | - jemdoc.css
+  | - Makefile
+  | - deploy.sh
+</pre></div></div>
+<h2>Making and Deploying</h2>
+<p>You can use the commands that jemdoc documentation suggests, but I find it much easier to use my Make commands.
+</p>
+<p>If youre using a virtual environment, make it active before running any of these commands. 
+</p>
+<p>Run these from the root folder
+</p>
+<div class="codeblock">
+<div class="blockcontent"><pre>
+make             # build the website
+make build       # build the website
+make clean       # clean the distribution folder
+make serve       # serve the website to localhost:8080 using python
+make check       # check all links (need to serve first, and needs pylinkvalidator)
+./deploy.sh      # deploy the website to Github Pages (check settings first!)
+</pre></div></div>
+<p>Check the MakeFile to change the settings. 
+</p>
+<p>Building: it takes all the jemdoc files in <tt>src<i></tt> and builds them to <tt>html</i></tt> and copies all files from <tt>src<i>assets</i></tt> to <tt>html<i>assets</i></tt> without modification.
+</p>
+<p>Deploying: it cleans, builds, and then sends the <tt>html/</tt> folder to the <tt>gh-pages</tt> branch. 
+</p>
+<h2>Documentation</h2>
+<p>The original documentation is still the key behind everything!
+</p>
+<p>Jemdoc: <a href="http://jemdoc.jaboc.net" target=&ldquo;blank&rdquo;>here</a>
+</p>
+<p>Jemdoc + MathJax: <a href="https://github.com/wsshin/jemdoc_mathjax" target=&ldquo;blank&rdquo;>here</a>
+</p>
+<p>Jemdoc + MathJax + Materialize SOURCE CODE: <a href="https://github.com/dev10110/dev10110.github.io" target=&ldquo;blank&rdquo;>here</a>
+</p>
+<h2>Disclaimer</h2>
+<p>There is no guarantee that stuff doesnt break in the future /isnt broken already. 
+I'll be keeping this updated for my website, but I provide no guarantees beyond that. If you spot something that needs fixing let me know!</p>
+<div id="footer">
+<div id="footer-text">
+Page generated 2023-06-18 18:19:54 EDT, by <a href="https://dev10110.github.io/jemdocMathJaxMaterialize.html" target="blank">jemdoc+MathJax+Materialize docs</a>, <a href="https://github.com/dev10110/dev10110.github.io">Github</a>
+</div>
+</div>
+</div>
+</div>
+</div> <!-- closing main container -->
+</div>
+<script>
+</script>
+</body>
+  </html>
