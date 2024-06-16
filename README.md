@@ -12,13 +12,45 @@ https://dev10110.github.io
 
 # Usage
 
-
 *Updating:*
 
 1. Write ```src/.jemdoc``` files (refer to jemdoc documentation). Assets should be saved in the ```src/assets/``` folder
 
 2. Update ```src/MENU```
 
+
+*Local Testing:*
+```
+docker compose build
+docker compose up -d
+```
+and then to enter the docker env:
+```
+docker exec -it  <docker container name> sh
+```
+
+To make the website, run (from inside the docker):
+```
+make
+make search
+```
+
+To deploy the website
+```
+# clone the repo into the html folder
+git clone git@github.com:dev10110/dev10110.github.io.git html
+cd html
+git checkout gh-pages 
+```
+build the website, and then
+```
+cd html
+git add .
+git commit -m "update website"
+git push
+```
+
+## Old instructions:
 
 *Local Testing:*
 

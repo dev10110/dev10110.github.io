@@ -6,24 +6,34 @@
 set -e
 
 # build
-make clean
-make
-make search
+# make clean
+# make
+# make search
 
 # navigate into the build output directory
-cd html
+# cd html
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
 
-git init
-git add -A
-git commit -m 'deploy'
+# git init
+# git add -A
+# git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io
-git push -f git@github.com:dev10110/dev10110.github.io.git master:gh-pages
+# git push -f git@github.com:dev10110/dev10110.github.io.git main:gh-pages
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
 # git push -f git@github.com:dev10110/jemdoc_dev.git master:gh-pages
 
-cd -
+# cd -
+
+
+# 
+# git clone git@github.com:dev10110/dev10110.github.io.git html
+# cd html
+# git checkout gh-pages 
+
+# # run make
+
+# git push 
