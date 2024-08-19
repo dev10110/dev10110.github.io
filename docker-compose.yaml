@@ -1,8 +1,0 @@
-services:
-  website:
-    build: .
-    tty: true
-    privileged: true
-    network_mode: "host"
-    volumes:
-      - .:/usr/src/app/

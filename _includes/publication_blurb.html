@@ -1,0 +1,66 @@
+<p>
+{{post.authors}}
+<br />
+<em>{{post.venue}}</em>
+<br/>
+{{ post.date | date: "%Y" }}
+<br />
+{% if post.arxiv %} 
+  <a href="{{post.arxiv}}">arxiv</a> /
+{% endif %} 
+{% if post.pdf %} 
+  <a href="{{post.pdf}}">pdf</a> /
+{% endif %} 
+{% if post.video %} 
+  <a href="{{post.video}}">video</a> /
+ {% endif %} 
+{% if post.code %} 
+  <a href="{{post.code}}">code</a> /
+{% endif %}
+{% if post.poster %}
+  <a href="{{post.poster}}">poster</a> /
+{% endif %}
+{% if post.slides %} 
+  <a href="{{post.slides}}">slides</a> /
+{% endif %}
+{% if post.link %}
+  <a href="{{post.link}}">link</a> /
+{% endif %}
+{% if post.youtube %} 
+  <a href="{{post.youtube}}">youtube</a> /
+{% endif %}
+{% if post.bib %}
+  <a data-bs-toggle="collapse" href="#collapse-bib-{{post.url}}" role="button" aria-expanded="false" aria-controls="collapse-bib-{{post.url}}">
+    bib
+  </a> /
+{% endif %}
+{% if post.abstract %}
+  <a data-bs-toggle="collapse" href="#collapse-abstract-{{post.url}}" role="button" aria-expanded="false" aria-controls="collapse-abstract-{{post.url}}">
+    abstract
+  </a> /
+{% endif %}
+<br/>
+<br/>
+{% if post.summary %}
+{{ post.summary }}
+<br/>
+{% endif %}
+{% assign content = post.content | strip_newlines %}
+{% if content != "" %}
+<a href="{{ post.url }}">More Info >></a>
+{% endif %}
+</p>
+{% if post.bib %}
+<div class="collapse" id="collapse-bib-{{post.url}}">
+  <div class="card card-body">
+    <pre style="white-space: pre-wrap;"><code>{{ post.bib }}</code></pre>
+  </div>
+</div>
+{% endif %}
+{% if post.abstract %}
+<div class="collapse" id="collapse-abstract-{{post.url}}">
+  <div class="card card-body">
+    <p>{{ post.abstract }}</p>
+  </div>
+</div>
+{% endif %}

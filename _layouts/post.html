@@ -1,0 +1,26 @@
+---
+layout: layout
+---
+
+{% include profile_short.html %}
+
+<table
+  style="
+    width: 100%;
+    border: 0px;
+    border-spacing: 0px;
+    border-collapse: separate;
+    margin-right: auto;
+    margin-left: auto;
+  "
+>
+  <tr>
+    <td style="padding: 2.5%; width: 100%; vertical-align: middle">
+      <h1>{{ page.title }}</h1>
+    </td>
+  </tr>
+
+  <tr>
+    <td>{{content}}</td>
+  </tr>
+</table>

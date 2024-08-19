@@ -1,145 +1,25 @@
+# updated website
 
-# About
+This website is built on **Jekyll**,  a static site generator that's perfect for GitHub hosted blogs ([Jekyll Repository](https://github.com/jekyll/jekyll)).
 
-This webiste generated using a *modified version* of jemdoc+MathJax http://www.mit.edu/~wsshin/jemdoc+mathjax.html. 
-
-Some more documentation:
-https://dev10110.github.io/jemdocMathJaxMaterialize.html
-
-# Live Demo
-
-https://dev10110.github.io
-
-# Usage
-
-*Updating:*
-
-1. Write ```src/.jemdoc``` files (refer to jemdoc documentation). Assets should be saved in the ```src/assets/``` folder
-
-2. Update ```src/MENU```
+The website design is just a modification of [Jon Barron's website](https://jonbarron.info/) and from [leonidk](https://github.com/leonidk/leonidk.github.io) and is converted for my own use. **Feel free to use template for your own purposes**, but please respect copyright for all the images/content in my `images`, `pdfs`, `_posts` folders. 
 
 
-*Local Testing:*
+## Local Dev
+
+If you have jekyll properly installed, just run 
 ```
-docker compose build
-docker compose up -d
+jekyll serve --livereload
 ```
-and then to enter the docker env:
+from the terminal. 
+
+Else, you can use Docker:
 ```
-docker exec -it  <docker container name> sh
+docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve
 ```
+from https://github.com/BretFisher/jekyll-serve
 
-To make the website, run (from inside the docker):
-```
-make
-make search
-```
-
-To deploy the website
-```
-# clone the repo into the html folder
-git clone git@github.com:dev10110/dev10110.github.io.git html
-cd html
-git checkout gh-pages 
-```
-build the website, and then
-```
-cd html
-git add .
-git commit -m "update website"
-git push
-```
-
-## Old instructions:
-
-*Local Testing:*
-
-1. Activate a python 3 environment (python 2 should also work, but is untested)
-```
-conda create --name website python=3.8
-conda activate webste
-```
-2. Run the make commands (from the root folder)
-```
-make clean      # optional, to completely delete the html folder
-
-make            # or
-make build      # to build to website
-
-```
-3. Open ```html/index.html``` in a browser
-
-*Deploying*
-```
-./deploy.sh
-```
-requires the python env
-
-This will run ```make clean & make```, and commit the files to the ```gh-pages``` branch.
-
-
-## Settings
-
-The make and deploy files are pretty short. Read through them to see what you can you change.
-
-## Link checking
-Link checking is performed using PyLinkValidator
-
-Checking locally:
-
-```
-make
-make serve    # Serve the html folder (ensure you have a python3 environment running), run the following from the root folder:
-make check    # In a second terminal window, (with python3 environment and pylinkvalidate installed)
-```
-Which will print details on which links are broken
-
-To check a live running website, simply run
-```
-pylinkvalidate.py --progress -o example.com
-```
-
-```-O``` checks external websites too.
-
-Details about pylinkvalidator: https://github.com/bartdag/pylinkvalidator
-
-## Search
-
-Search is performed using ```lunr```, https://lunrjs.com
-
-The implementation is lifted from https://github.com/BLE-LTER/Lunr-Index-and-Search-for-Static-Sites
-
-Essentially, from the root folder
-```
-node install lunr
-node install cheerio
-```
-The list of files that make search possible are:
-```
-build_index.js    # builds the search index
-lunr_client.js    # for rendering the front end
-lunr_index.js     # the search index json file
-search.jemdoc     # compiled to html to render the search functionality
-```
-
-Check settings in ```build_index.js```. Currently it indexes all `html` files, and the body content is the set of content in the `div` with id `mainContentArea`
-
-Process:
-
-To make the search index, run (after the `html` files have been produced)
-```
-make search
-```
-from the root folder.
-
-
-
-Disclaimer
-----------
-As per the original creators, 
-> The focus of the implementation of the additional features was to "make them just work," so the implementation is suboptimal, both in terms of performance and style.  
->
-> Still, several users and I find jemdoc+MathJax is quite stable and does the job correctly :-)
->
-> Wonseok Shin
+<!-- 
+## Thumbnails
+* I use thumbnails, so I can upload arbitrary sized images but then only display small ones. The `_make_thumbnails.sh` script generates them and the html template looks in `tn/` for all images.  -->
 
