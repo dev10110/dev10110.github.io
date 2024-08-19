@@ -25,5 +25,3 @@ bib: |-
   	journal = {Journal of Physics D: Applied Physics},
   }
 ---
-
-hi
