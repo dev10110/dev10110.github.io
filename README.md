@@ -19,7 +19,13 @@ docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve
 ```
 from https://github.com/BretFisher/jekyll-serve
 
-<!-- 
-## Thumbnails
-* I use thumbnails, so I can upload arbitrary sized images but then only display small ones. The `_make_thumbnails.sh` script generates them and the html template looks in `tn/` for all images.  -->
 
+## Link Checking
+
+Use `lychee`: https://lychee.cli.rs/introduction/
+
+Simply run 
+```
+lychee http://127.0.0.1:4000
+```
+to run through the website and see if there are any broken links. 
