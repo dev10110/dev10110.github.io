@@ -6,8 +6,8 @@ image: /images/2021-differentially-flat.png
 venue: "IEEE L-CSS and ACC 2022"
 authors: "<strong>Devansh Agrawal</strong>, Hardik Parwana, Ryan K Cosner, Ugo Rosolia, Aaron D Ames, Dimitra Panagou"
 link: https://doi.org/10.1109/LCSYS.2021.3136465
-arxiv: 
-code: 
+arxiv:
+code:
 abstract: "This paper introduces the notion of an Input
 Constrained Control Barrier Function (ICCBF), as a method to
 synthesize safety-critical controllers for nonlinear control-affine
@@ -21,13 +21,13 @@ Barrier Functions, and thus are applicable to systems of non-
 uniform relative degree. Simulation results are presented for the
 adaptive cruise control problem, and a spacecraft rendezvous
 problem."
-excerpt: 
+excerpt:
 pdf: pdfs/2021-differentially-flat.pdf
 bib: |-
   @ARTICLE{9655322,
     author={Agrawal, Devansh R. and Parwana, Hardik and Cosner, Ryan K. and Rosolia, Ugo and Ames, Aaron D. and Panagou, Dimitra},
-    journal={IEEE Control Systems Letters}, 
-    title={A Constructive Method for Designing Safe Multirate Controllers for Differentially-Flat Systems}, 
+    journal={IEEE Control Systems Letters},
+    title={A Constructive Method for Designing Safe Multirate Controllers for Differentially-Flat Systems},
     year={2022},
     volume={6},
     number={},

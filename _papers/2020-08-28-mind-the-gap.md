@@ -6,8 +6,8 @@ image: /images/2020-mind-the-gap.png
 venue: "ArXiv"
 authors: "<strong>Devansh Agrawal</strong>, Peter Lyon, Martin Frobisher, Andy Doherty, Ben Allen, Freddie Rawlins"
 link: https://arxiv.org/abs/2008.13564
-arxiv: 
-code: 
+arxiv:
+code:
 abstract: "Robust, low-cost solutions are needed to maintain social distancing guidelines during the
 COVID-19 pandemic. We establish a method to measure the distance between multiple
 phones across a large number of closely spaced smartphones with a median absolute error of
@@ -19,7 +19,7 @@ connection. We have no device specific requirements nor need any manual calibrat
 device synchronization. It has been tested with over 20 different phones models, from both
 the Android and iOS systems in the past 5 years. To the best of our knowledge, this is the
 first successful such implementation, and has 25000 users at time of publishing."
-excerpt: 
+excerpt:
 pdf: pdfs/2020-mind-the-gap.pdf
 bib: |-
   @article{agrawal2020mind,

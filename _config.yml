@@ -22,7 +22,7 @@ footer-links:
   facebook:
   flickr:
   github: dev10110
-  instagram: 
+  instagram:
   linkedin:
   pinterest:
   rss: # just type anything here for a working RSS icon
@@ -90,7 +90,7 @@ collections:
     output: true
   papers:
     output: true
-  news: 
+  news:
     output: true
 
 
@@ -107,5 +107,5 @@ exclude:
   - _temp/
 
 # produce files even if their date is in the future
-future: 
-  true 
+future:
+  true
