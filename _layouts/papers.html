@@ -23,6 +23,35 @@ layout: layout
   <tr>
     <td>{%assign post = page %} {% include publication_blurb.html %}</td>
   </tr>
+  {% if page.abstract %}
+  <tr>
+    <td>
+      <h2>Abstract</h2>
+      <p>{{ page.abstract }} </p>
+    </td>
+  </tr>
+  {% endif %}
+  {% if page.video %}
+  {% if page.video contains 'youtu' %}
+  <tr>
+    <td>
+      <h2>Video</h2>
+      <div>
+        {% assign urlArray = page.video | split: '/' %}
+        {% assign youtube_embed_url = "https://www.youtube.com/embed/" | append:  urlArray[-1] %}
+        <div class="ratio ratio-16x9">
+        <iframe
+          src="{{ youtube_embed_url }}"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+        </div>
+      </div>
+    </td>
+  </tr>
+  {% endif %}
+  {% endif %}
   <tr>
     <td>{{content}}</td>
   </tr>
