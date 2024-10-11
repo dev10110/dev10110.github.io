@@ -22,7 +22,7 @@ uniform relative degree. Simulation results are presented for the
 adaptive cruise control problem, and a spacecraft rendezvous
 problem."
 excerpt:
-pdf: pdfs/2021-differentially-flat.pdf
+pdf: /pdfs/2021-differentially-flat.pdf
 bib: |-
   @ARTICLE{9655322,
     author={Agrawal, Devansh R. and Parwana, Hardik and Cosner, Ryan K. and Rosolia, Ugo and Ames, Aaron D. and Panagou, Dimitra},

@@ -20,7 +20,7 @@ device synchronization. It has been tested with over 20 different phones models,
 the Android and iOS systems in the past 5 years. To the best of our knowledge, this is the
 first successful such implementation, and has 25000 users at time of publishing."
 excerpt:
-pdf: pdfs/2020-mind-the-gap.pdf
+pdf: /pdfs/2020-mind-the-gap.pdf
 bib: |-
   @article{agrawal2020mind,
     title={Mind The Gap: Real-time Decentralized Distance Estimation using Ultrasound and Bluetooth across Multiple Smartphones},
