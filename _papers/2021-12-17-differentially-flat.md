@@ -8,6 +8,7 @@ authors: "<strong>Devansh Agrawal</strong>, Hardik Parwana, Ryan K Cosner, Ugo R
 link: https://doi.org/10.1109/LCSYS.2021.3136465
 arxiv:
 code:
+video: https://youtu.be/1IuUIOUQ9g4
 abstract: "This paper introduces the notion of an Input
 Constrained Control Barrier Function (ICCBF), as a method to
 synthesize safety-critical controllers for nonlinear control-affine
