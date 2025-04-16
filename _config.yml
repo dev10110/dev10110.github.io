@@ -92,6 +92,8 @@ collections:
     output: true
   news:
     output: true
+  thesis:
+    output: true
 
 
 # Exclude these files from your production _site

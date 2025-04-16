@@ -19,6 +19,11 @@ docker run -p 4000:4000 -v $(pwd):/site bretfisher/jekyll-serve
 ```
 from https://github.com/BretFisher/jekyll-serve
 
+or 
+```
+docker run --rm --volume="$PWD:/srv/jekyll" -p 3000:4000 -it jekyll/jekyll:3.8 jekyll serve --trace
+```
+
 
 ## Link Checking
 
