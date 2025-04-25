@@ -12,4 +12,5 @@ abstract: "Accurate perception, state estimation and mapping are essential for s
 Our contributions include two approaches to modify popular obstacle mapping paradigms, (I) Safe Flight Corridors, and (II) Signed Distance Fields. We formally prove the correctness of both methods, and describe how they integrate with existing planning and control modules. Simulations using the Replica dataset highlight the efficacy of our methods compared to state-of-the-art techniques. Real-world experiments with a robotic rover show that, while baseline methods result in collisions with previously mapped obstacles, the proposed framework enables the rover to safely stop before potential collisions.
 "
 pdf: /pdfs/2025-certifiably-correct-mapping.pdf
+video: https://youtu.be/qMlDK7Iou48
 ---
