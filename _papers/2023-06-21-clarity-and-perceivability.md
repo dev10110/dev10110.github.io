@@ -18,4 +18,5 @@ bib: |-
     year={2023},
     publisher={IEEE}
   }
+awards: "⭐️ Best Paper Award, IEEE TC-AC (Technical Committee on Aerospace Controls) 2024 ⭐️"
 ---

@@ -23,5 +23,5 @@ bib: |-
       keywords={Trajectory;Safety;Robots;Logic gates;Robot sensing systems;Nonlinear dynamical systems;Quadrotors;Collision Avoidance;Motion and Path Planning;Aerial Systems: Applications;Safety-Critical Control},
       doi={10.1109/TRO.2024.3454415}
     }
-
+awards: "⭐️ Finalist for Best Paper Award, IEEE TC-RC (Technical Committee on Robot Control) 2024 ⭐️"
 ---

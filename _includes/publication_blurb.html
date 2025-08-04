@@ -1,4 +1,8 @@
 <p>
+{% if post.awards %}
+<b>{{ post.awards }}</b>
+<br />
+{% endif %}
 {{post.authors}}
 <br />
 <em>{{post.venue}}</em>
