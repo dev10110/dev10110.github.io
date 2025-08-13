@@ -10,31 +10,31 @@
 {{ post.date | date: "%Y" }}
 <br />
 {% if post.arxiv %}
-  <a href="{{post.arxiv}}">arxiv</a> /
+  <a target="_blank" href="{{post.arxiv}}">arxiv</a> /
 {% endif %}
 {% if post.pdf %}
-  <a href="{{post.pdf}}">pdf</a> /
+  <a target="_blank" href="{{post.pdf}}">pdf</a> /
 {% endif %}
 {% if post.video %}
-  <a href="{{post.video}}">video</a> /
+  <a target="_blank" href="{{post.video}}">video</a> /
 {% endif %}
 {% if post.video2 %}
-  <a href="{{post.video2}}">video 2</a> /
+  <a target="_blank" href="{{post.video2}}">video 2</a> /
 {% endif %}
 {% if post.code %}
-  <a href="{{post.code}}">code</a> /
+  <a target="_blank" href="{{post.code}}">code</a> /
 {% endif %}
 {% if post.poster %}
-  <a href="{{post.poster}}">poster</a> /
+  <a target="_blank" href="{{post.poster}}">poster</a> /
 {% endif %}
 {% if post.slides %}
-  <a href="{{post.slides}}">slides</a> /
+  <a target="_blank" href="{{post.slides}}">slides</a> /
 {% endif %}
 {% if post.link %}
-  <a href="{{post.link}}">link</a> /
+  <a target="_blank" href="{{post.link}}">link</a> /
 {% endif %}
 {% if post.youtube %}
-  <a href="{{post.youtube}}">youtube</a> /
+  <a target="_blank" href="{{post.youtube}}">youtube</a> /
 {% endif %}
 {% if post.bib %}
   <a data-bs-toggle="collapse" href="#collapse-bib-{{post.url}}" role="button" aria-expanded="false" aria-controls="collapse-bib-{{post.url}}">
@@ -54,7 +54,7 @@
 {% endif %}
 {% assign content = post.content | strip_newlines %}
 {% if content != "" %}
-<a href="{{ post.url }}">More Info >></a>
+<a target="_blank" href="{{ post.url }}">More Info >></a>
 {% endif %}
 </p>
 {% if post.bib %}
