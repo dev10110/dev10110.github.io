@@ -24,4 +24,5 @@ bib: |-
       doi={10.1109/TRO.2024.3454415}
     }
 awards: "⭐️ Finalist for Best Paper Award, IEEE TC-RC (Technical Committee on Robot Control) 2024 ⭐️"
+highlight: true
 ---

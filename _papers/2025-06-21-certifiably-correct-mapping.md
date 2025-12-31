@@ -13,4 +13,5 @@ Our contributions include two approaches to modify popular obstacle mapping para
 "
 pdf: /pdfs/2025-certifiably-correct-mapping.pdf
 video: https://youtu.be/qMlDK7Iou48
+highlight: true
 ---
