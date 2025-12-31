@@ -3,7 +3,7 @@ layout: papers
 title:  "Online Safety under Multiple Constraints and Input Bounds using gatekeeper: Theory and Applications"
 date: 2025-08-13
 image: /images/2025-gatekeeper-wezes-optimality.gif
-venue: "L-CSS 2025"
+venue: "IEEE L-CSS 2025"
 authors: "<strong>Devansh Agrawal</strong> and Dimitra Panagou"
 arxiv:  https://arxiv.org/abs/2508.09963
 code: https://github.com/dev10110/GatekeeperFormationFlight.jl
